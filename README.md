@@ -13,6 +13,6 @@
 #### Development environment setup instructions:
 
 # Screenshots 📷
-### 1. Southview Piano Company homepage 🏠
+### 1. CSharp Central homepage 🏠
 
 Successful build:
