@@ -8,7 +8,7 @@ using Microsoft.Identity.Client;
 
 namespace csharp_central.API.Controllers
 {
-    // https://localhost:xxxx/api/categories
+    // https://localhost:7232/api/Categories
     [Route("api/[controller]")]
     [ApiController]
     public class CategoriesController : ControllerBase
@@ -35,6 +35,26 @@ namespace csharp_central.API.Controllers
                 Name = category.Name,
                 UrlHandle = category.UrlHandle
             };
+
+            return Ok(response);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllCategories()
+        {
+            var categories = await categoryRepository.GetAllAsync();
+
+            // Map domain model to DTO
+            var response = new List<CategoryDto>();
+            foreach (var category in categories)
+            {
+                response.Add(new CategoryDto
+                {
+                    Id = category.Id,
+                    Name = category.Name,
+                    UrlHandle = category.UrlHandle
+                });
+            }
 
             return Ok(response);
         }

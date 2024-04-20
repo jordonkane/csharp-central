@@ -1,6 +1,7 @@
 ﻿using csharp_central.API.Data;
 using csharp_central.API.Repositories.Interface;
 using csharp_central.API.Models.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace csharp_central.API.Repositories.Implementation
 {
@@ -19,6 +20,11 @@ namespace csharp_central.API.Repositories.Implementation
             await dbContext.SaveChangesAsync();
 
             return category;
+        }
+
+        public async Task<IEnumerable<Category>> GetAllAsync()
+        {
+            return await dbContext.Categories.ToListAsync();
         }
     }
 }
