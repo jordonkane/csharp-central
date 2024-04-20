@@ -10,10 +10,3 @@
 #### Nuget Packages:
 1. `Microsoft.EntityFrameworkCore.SqlServer` v7.0.5
 2. `Microsoft.EntityFrameworkCore.Tools` v7.0.5
-
-#### Development environment setup instructions:
-
-# Screenshots 📷
-### 1. CSharp Central homepage 🏠
-
-Successful build:
